@@ -2,13 +2,13 @@ import { Flex, Text } from "@chakra-ui/react"
 import PageWrapper from "../../components/PageWrapper/PageWrapper"
 import Title from "../../components/Title/Title"
 import ProfileBanner from "../../components/ProfileBanner/ProfileBanner"
-import FavoriteRestaurants from "../../components/FavoriteRestaurants/FavoriteRestaurants"
+import FavoriteExercises from "../../components/FavoriteExercises/FavoriteExercises"
 import { useContext } from "react"
 import { AuthContext } from "../../contexts/AuthContext"
 
 const ProfilePage = () => {
   const { user } = useContext(AuthContext)
-  const { username, email, avatar, favoriteRestaurants } = user
+  const { username, email, avatar, favoriteExercises } = user
 
   const handleUserEdit = () => {}
   const handleUserDeletion = () => {}
@@ -24,8 +24,8 @@ const ProfilePage = () => {
           handleUserDeletion={handleUserDeletion}
           handleUserEdit={handleUserEdit}
         />
-        {favoriteRestaurants.length !== 0 && (
-          <FavoriteRestaurants favoriteRestaurants={favoriteRestaurants} />
+        {favoriteExercises.length !== 0 && (
+          <FavoriteExercises favoriteExercises={favoriteExercises} />
         )}
       </Flex>
     </PageWrapper>

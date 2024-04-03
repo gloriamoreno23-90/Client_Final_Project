@@ -1,26 +1,23 @@
-export const RESTAURANT_OPTIONS = [
+export const EXERCISE_OPTIONS = [
   "name",
-  "neighborhood",
-  "address",
-  "cuisine_type",
+  "description",
   "image",
+  "duration",
+  "audio",
 ]
 
-export const RESTAURANT_MOCK = {
+export const EXERCISE_MOCK = {
   name: "",
-  operating_hours: {},
-  location: { coordinates: [] },
-  neighborhood: "",
-  address: "",
-  cuisine_type: "",
+  description: "",
   image: "",
-  reviews: [],
+  duration: "",
+  audio: "",
 }
 
-export const EDIT_RESTAURANT_DATA = {
+export const EDIT_EXERCISE_DATA = {
   name: "",
-  neighborhood: "",
-  address: "",
-  cuisine_type: "",
+  description: "",
   image: "",
+  duration: "",
+  audio: "",
 }

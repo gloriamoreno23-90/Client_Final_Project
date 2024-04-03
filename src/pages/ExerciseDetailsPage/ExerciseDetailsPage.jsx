@@ -1,71 +1,66 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import restaurantsService from "../../services/exercises.service"
+import exercisesService from "../../services/exercises.service"
 import FormPageLayout from "../../components/FormPageLayout/FormPageLayout"
-import RestaurantDetails from "../../components/RestaurantDetails/RestaurantDetails"
-import { getRestaurantDetails } from "../../utils"
+import ExerciseDetails from "../../components/ExerciseDetails/ExerciseDetails"
+import { getExerciseDetails } from "../../utils"
 import Modal from "../../components/Modal/Modal"
 import CustomForm from "../../components/CustomForm/CustomForm"
 import {
-  EDIT_RESTAURANT_DATA,
-  RESTAURANT_MOCK,
-  RESTAURANT_OPTIONS,
+  EDIT_EXERCISE_DATA,
+  EXERCISE_MOCK,
+  EXERCISE_OPTIONS,
 } from "../../consts"
 
-const RestaurantDetailsPage = () => {
+const ExerciseDetailsPage = () => {
   // const { isOpen, onOpen, onClose } = useDisclosure()
   const [showModal, setShowModal] = useState(false)
-  const [restaurant, setRestaurant] = useState(RESTAURANT_MOCK)
-  const [editRestaurantData, setEditRestaurantData] =
-    useState(EDIT_RESTAURANT_DATA)
+  const [exercise, setExercise] = useState(EXERCISE_MOCK)
+  const [editExerciseData, setEditExerciseData] =
+    useState(EDIT_EXERCISE_DATA)
   const { id } = useParams()
   const {
     image,
     name,
-    neighborhood,
-    address,
-    cuisine_type,
-    operating_hours,
-    location,
-    reviews,
-  } = restaurant
-  const RESTAURANT_DETAILS = getRestaurantDetails(
+    description,
+    duration,
+    audio,
+  } = exercise
+  const EXERCISE_DETAILS = getExerciseDetails(
+    image,
     name,
-    neighborhood,
-    address,
-    cuisine_type,
-    operating_hours,
-    location,
-    reviews
+    description,
+    duration,
+    audio,
   )
 
-  const getSingleRestaurant = async () => {
+  const getSingleExercise = async () => {
     try {
-      const singleRestaurant = await restaurantsService.getOneRestaurant(id)
-      setRestaurant(singleRestaurant)
+      const singleExercise = await exercisesService.getOneExercise(id)
+      setExercise(singleExercise)
     } catch (error) {
       console.log("Error ==>", error)
     }
   }
 
   useEffect(() => {
-    getSingleRestaurant()
+    getSingleExercise()
   }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target
     console.log("EL NAME Y EL VALUE ==>", name, value)
-    setEditRestaurantData({ ...editRestaurantData, [name]: value })
+    setEditExerciseData({ ...editExerciseData, [name]: value })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const updatedRestaurant = await restaurantsService.editRestaurant(
+    const updatedExercise = await exercisesService.editExercise(
       id,
-      editRestaurantData
+      editExerciseData
     )
     setShowModal(false)
-    setRestaurant(updatedRestaurant)
+    setExercise(updatedExercise)
     try {
     } catch (error) {
       // MOSTRAR EL ERROR => MODAL!!! TE FALTA EL NOMBRE DE USUARIO: HACKER JIJIJI
@@ -75,17 +70,17 @@ const RestaurantDetailsPage = () => {
 
   return (
     <FormPageLayout backgroundImage={image}>
-      <RestaurantDetails
+      <ExerciseDetails
         onOpen={() => setShowModal(true)}
-        restaurantDetails={RESTAURANT_DETAILS}
+        exerciseDetails={EXERCISE_DETAILS}
       />
       {showModal && (
         <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
           <CustomForm
-            options={RESTAURANT_OPTIONS}
+            options={EXERCISE_OPTIONS}
             onChange={handleChange}
             onSubmit={handleSubmit}
-            title={"Edit Restaurant!"}
+            title={"Edit Exercise!"}
           />
         </Modal>
       )}
@@ -93,4 +88,4 @@ const RestaurantDetailsPage = () => {
   )
 }
 
-export default RestaurantDetailsPage
+export default ExerciseDetailsPage

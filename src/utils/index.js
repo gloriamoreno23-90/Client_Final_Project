@@ -27,22 +27,18 @@ export const getReviewsAverage = (reviews) => {
   )
 }
 
-export const getRestaurantDetails = (
+export const getExerciseDetails = (
   name,
-  neighborhood,
-  address,
-  cuisine_type,
-  operating_hours,
-  location,
-  reviews
+  description,
+  image,
+  duration,
+  audio
 ) => {
   return [
     { name: "Name", content: name },
-    { name: "Neighborhood", content: neighborhood },
-    { name: "Address", content: address },
-    { name: "Cuisine type", content: cuisine_type },
-    { name: "Operating hours", content: operating_hours },
-    { name: "Location: ", content: location.coordinates.join(" ") },
-    { name: "Reviews: ", content: getReviewsAverage(reviews) },
+    { name: "Description", content: description },
+    { name: "Image", content: image },
+    { name: "Duration", content: duration },
+    { name: "Audio", content: audio },
   ]
 }

@@ -3,7 +3,7 @@ import React from "react"
 import PenEditIcon from "../PenEditIcon/PenEditIcon"
 // import EditPenIcon from "../EditPenIcon/EditPenIcon"
 
-const RestaurantDetails = ({ onOpen, restaurantDetails }) => {
+const ExerciseDetails = ({ onOpen, exerciseDetails }) => {
   return (
     <Flex marginBottom={"80px"} w={"50%"} justify={"center"}>
       <Flex
@@ -16,7 +16,7 @@ const RestaurantDetails = ({ onOpen, restaurantDetails }) => {
         borderRadius={"20px"}
         flexDir={"column"}
       >
-        {restaurantDetails.map(({ name, content }) => {
+        {exerciseDetails.map(({ name, content }) => {
           return (
             <Box key={name}>
               {name === "Operating hours" ? (
@@ -47,4 +47,4 @@ const RestaurantDetails = ({ onOpen, restaurantDetails }) => {
   )
 }
 
-export default RestaurantDetails
+export default ExerciseDetails

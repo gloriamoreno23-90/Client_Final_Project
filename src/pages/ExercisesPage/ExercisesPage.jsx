@@ -2,21 +2,21 @@ import React from 'react'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 import { Flex } from '@chakra-ui/layout'
 import Title from '../../components/Title/Title'
-import RestaurantsGrid from '../../components/ExercisesGrid/ExercisesGrid'
+import ExercisesGrid from '../../components/ExercisesGrid/ExercisesGrid'
 import { useLoaderData } from 'react-router-dom'
 
-function RestaunrantsPage() {
+function ExercisesPage() {
 
-  const restaurants = useLoaderData();
+  const exercises = useLoaderData();
 
   return (
     <PageWrapper>
       <Flex flexDir={"column"} gap={"80px"}>
-        <Title>Available Restaurants:</Title>
-        <RestaurantsGrid restaurants={restaurants} />
+        <Title>Available Exercises:</Title>
+        <ExercisesGrid exercies={exercises} />
       </Flex>
     </PageWrapper>
   )
 }
 
-export default RestaunrantsPage
+export default ExercisesPage

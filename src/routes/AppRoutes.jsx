@@ -1,13 +1,15 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Layout from "../layouts/Layout"
 import HomePage from "../pages/HomePage/HomePage"
-import RestaunrantsPage from "../pages/RestaunrantsPage/RestaunrantsPage"
-import LoaderRestaunrantsPage from "../pages/RestaunrantsPage/LoaderRestaunrantsPage"
-import CreateRestaurantPage from "../pages/CreateRestaurantPage/CreateRestaurantPage"
+import ExercisesPage from "../pages/ExercisesPage/ExercisesPage"
+import LoaderExercisesPage from "../pages/ExercisesPage/LoaderExercisesPage"
+import CreateExercisePage from "../pages/CreateRestaurantPage/CreateRestaurantPage"
 import LoginPage from "../pages/LoginPage/LoginPage"
 import SignupPage from "../pages/SignupPage/SignupPage"
 import ProfilePage from "../pages/ProfilePage/ProfilePage"
-import RestaurantDetailsPage from "../pages/RestaurantDetailsPage/RestaurantDetailsPage"
+import ExerciseDetailsPage from "../pages/ExerciseDetailsPage/ExerciseDetailsPage"
+
+
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage"
 import AuthMiddleware from "../middlewares/AuthMiddleware"
 
@@ -38,17 +40,17 @@ const AppRoutes = () => {
           ),
         },
         {
-          path: "/restaurants",
-          element: <RestaunrantsPage />,
-          loader: LoaderRestaunrantsPage,
+          path: "/exercises",
+          element: <ExercisesPage />,
+          loader: LoaderExercisesPage,
         },
         {
-          path: "/restaurants/:id",
-          element: <RestaurantDetailsPage />,
+          path: "/exercises/:id",
+          element: <ExerciseDetailsPage />,
         },
         {
-          path: "/restaurants/create",
-          element: <CreateRestaurantPage />,
+          path: "/exercises/create",
+          element: <CreateExercisePage />,
         },
         {
           path: "*",
