@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import restaurantsService from "../../services/restaurants.service"
+import restaurantsService from "../../services/exercises.service"
 import FormPageLayout from "../../components/FormPageLayout/FormPageLayout"
 import RestaurantDetails from "../../components/RestaurantDetails/RestaurantDetails"
 import { getRestaurantDetails } from "../../utils"

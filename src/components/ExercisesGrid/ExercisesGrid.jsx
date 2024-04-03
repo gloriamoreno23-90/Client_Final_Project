@@ -1,9 +1,9 @@
 import { Grid } from "@chakra-ui/react"
 import React from "react"
-import RestaurantCard from "../RestaurantCard/RestaurantCard"
+import ExerciseCard from "../ExerciseCard/ExerciseCard"
 import CustomLink from "../CustomLink/CustomLink"
 
-const RestaurantsGrid = ({ restaurants }) => {
+const ExercisesGrid = ({ exercises }) => {
   const handleLike = (e) => {
     e.preventDefault()
   }
@@ -18,10 +18,10 @@ const RestaurantsGrid = ({ restaurants }) => {
       ]}
       gap={"40px"}
     >
-      {restaurants.map(({ name, _id, image }) => {
+      {exercises.map(({ name, _id, image }) => {
         return (
-          <CustomLink key={_id} to={`/restaurants/${_id}`}>
-            <RestaurantCard
+          <CustomLink key={_id} to={`/exercises/${_id}`}>
+            <ExerciseCard
               key={_id}
               name={name}
               image={image}
@@ -34,4 +34,4 @@ const RestaurantsGrid = ({ restaurants }) => {
   )
 }
 
-export default RestaurantsGrid
+export default ExercisesGrid

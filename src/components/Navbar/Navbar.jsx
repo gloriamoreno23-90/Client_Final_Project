@@ -13,8 +13,8 @@ const Navbar = () => {
       link: "/",
       text: "Home",
     },
-    { link: "/restaurants", text: "Restaurants" },
-    { link: "/restaurants/create", text: "Create" },
+    { link: "/exercises", text: "Exercises" },
+    { link: "/exercises/create", text: "Create" },
   ]
 
   const location = useLocation()
@@ -27,7 +27,7 @@ const Navbar = () => {
     >
       <CustomLink to="/">
         <Text fontSize={"40px"} fontWeight={"700"}>
-          Let Him Cook
+          Let's Meditate and Relax
         </Text>
       </CustomLink>
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import { Flex } from '@chakra-ui/layout';
-import FeaturedRestaurants from '../../components/FeaturedRestaurants/FeaturedRestaurants';
+import FeaturedExercises from '../../components/FeaturedExercises/FeaturedExercises';
 
 function HomePage() {
   return (
     <PageWrapper>
       <Flex>
-        <FeaturedRestaurants />
+        <FeaturedExercises />
       </Flex>
     </PageWrapper>
   );

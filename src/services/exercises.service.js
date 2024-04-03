@@ -1,21 +1,21 @@
 import AxiosConfig from "./axios"
 
-class RestaurantService extends AxiosConfig {
+class ExerciseService extends AxiosConfig {
   constructor() {
-    super("restaurants")
+    super("exercises")
   }
 
-  async getAllRestaurants() {
+  async getAllExercises() {
     const response = await this.axios.get("/list")
     return response.data
   }
 
-  async getOneRestaurant(id) {
+  async getOneExercise(id) {
     const response = await this.axios.get(`/getOne/${id}`)
     return response.data
   }
 
-  async creatRestaurant(data) {
+  async creatExercise(data) {
     data.location = {
       type: "Point",
       coordinates: [12, -43],
@@ -24,10 +24,10 @@ class RestaurantService extends AxiosConfig {
     return response.data
   }
 
-  async editRestaurant(id, data) {
+  async editExercise(id, data) {
     const response = await this.axios.put(`/edit/${id}`, data)
     return response.data
   }
 }
 
-export default new RestaurantService()
+export default new ExerciseService()

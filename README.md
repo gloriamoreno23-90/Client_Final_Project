@@ -1,4 +1,4 @@
-# LET`S RELAX: built using MERN STACK (Mongo, Express, React.JS, Node)
+# LET`S MEDITATE AND RELAX: built using MERN STACK (Mongo, Express, React.JS, Node)
 
 Let`s relax is a MERN app that displays some of the most renowned meditation and relaxation apps around the world and allows
 experienced users to create more exercises and display them on the web.

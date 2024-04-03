@@ -3,7 +3,7 @@ import FormPageLayout from "../../components/FormPageLayout/FormPageLayout"
 import { Flex, Text } from "@chakra-ui/layout"
 import Input from "../../components/Input/Input"
 import SubmitButton from "../../components/SubmitButton/SubmitButton"
-import restaurantsService from "../../services/restaurants.service"
+import restaurantsService from "../../services/exercises.service"
 
 const IMAGE =
   "https://res.cloudinary.com/dagndlfhj/image/upload/v1709581221/matt-connor-9Qs_9n2oSJo-unsplash_izp5kl.jpg"

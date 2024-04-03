@@ -2,7 +2,7 @@ import { Flex, GridItem, Text } from "@chakra-ui/react"
 import React from "react"
 // import LikeIcon from "../LikeIcon/LikeIcon"
 
-const RestaurantCard = ({ image, name, handleLike }) => {
+const ExerciseCard = ({ image, name, handleLike }) => {
   return (
     <GridItem
       cursor={"pointer"}
@@ -38,4 +38,4 @@ const RestaurantCard = ({ image, name, handleLike }) => {
   )
 }
 
-export default RestaurantCard
+export default ExerciseCard

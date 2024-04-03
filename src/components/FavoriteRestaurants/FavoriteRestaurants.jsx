@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react"
 import React from "react"
 import Title from "../Title/Title"
-import RestaurantsGrid from "../RestaurantsGrid/RestaurantsGrid"
+import RestaurantsGrid from "../ExercisesGrid/ExercisesGrid"
 
 const FavoriteRestaurants = ({ favoriteRestaurants }) => {
   return (

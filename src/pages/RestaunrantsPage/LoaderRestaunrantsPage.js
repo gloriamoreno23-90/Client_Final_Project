@@ -1,4 +1,4 @@
-import restaurantsService from '../../services/restaurants.service';
+import restaurantsService from '../../services/exercises.service';
 
 const LoaderRestaunrantsPage = async () => {
   const restaurants = await restaurantsService.getAllRestaurants();
